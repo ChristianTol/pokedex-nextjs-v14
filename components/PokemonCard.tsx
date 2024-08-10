@@ -28,6 +28,12 @@ interface Prop {
   index: number;
 }
 
+interface PokemonType {
+  type: {
+    name: keyof typeof TYPE_COLORS;
+  };
+}
+
 const variants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 },
@@ -130,7 +136,7 @@ function PokemonCard({pokemon, index}: Prop) {
   );
 };
 
-export const getTypeColorGradient = (typesArray: any) => {
+export const getTypeColorGradient = (typesArray: PokemonType[]) => {
   if (typesArray.length === 1) {
     return [
       TYPE_COLORS[typesArray[0].type.name],
