@@ -5,7 +5,7 @@ import Head from "next/head";
 import Link from "next/link";
 
 async function Home() {
-  const data = await fetchPokemon(0, 100);
+  const data = await fetchPokemon(0, 10);
 
   return (
     <>

@@ -6,7 +6,7 @@ import pokeball from "../public/pokeball-2.png";
 import { useInView } from "react-intersection-observer";
 import { fetchPokemon } from "@/app/action";
 
-let offset = 100;
+let offset = 10;
 let limit = 1024;
 
 export type PokemonCard = JSX.Element;
@@ -17,7 +17,7 @@ function LoadMore() {
 
   useEffect(() => {
     if (inView && offset <= limit) {
-      const itemsToFetch = offset + 100 <= limit ? 100 : limit - offset + 1;
+      const itemsToFetch = offset + 10 <= limit ? 10 : limit - offset + 1;
       
       fetchPokemon(offset, itemsToFetch)
         .then((res) => {
