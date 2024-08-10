@@ -42,7 +42,7 @@ const variants = {
 function PokemonCard({pokemon, index}: Prop) {
   const pokeIndex = ("000" + pokemon.id).slice(pokemon.id > 999 ? -4 : -3);
   const [shiny, setShiny] = useState(false);
-  const isMobile = window.matchMedia("(max-width: 767px)").matches;
+  // const isMobile = window.matchMedia("(max-width: 767px)").matches;
 
   const typeColorGradient = getTypeColorGradient(pokemon.types);
 
@@ -93,7 +93,7 @@ function PokemonCard({pokemon, index}: Prop) {
             <span
               key={type.type.name}
               className={`px-2 py-0 md:py-3 rounded flex items-center justify-center sm:py-1 sm:gap-1
-              ${isMobile && type.type.name}`}
+              ${type.type.name}`}
             >
               <div className="md:hidden">
                 <Image
