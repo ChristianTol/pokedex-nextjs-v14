@@ -1,26 +1,28 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
+    "target": "esnext", // Optional: Define the ECMAScript target version
+    "lib": ["dom", "dom.iterable", "esnext"], // Include relevant libraries
+    "allowJs": true, // Allow JavaScript files to be compiled
+    "skipLibCheck": true, // Skip type checking of declaration files
+    "strict": true, // Enable all strict type-checking options
+    "noEmit": true, // Do not emit compiled files
+    "esModuleInterop": true, // Enable compatibility with CommonJS and ES modules
+    "module": "esnext", // Specify module code generation
+    "moduleResolution": "bundler", // Use bundler-compatible module resolution
+    "resolveJsonModule": true, // Allow importing .json files
+    "isolatedModules": true, // Ensure each file can be transpiled independently
+    "jsx": "preserve", // Keep JSX as is, suitable for Next.js
+    "incremental": true, // Enable incremental compilation
+    "paths": {
+      "@/*": ["./*"] // Use @ as an alias for the root directory
+    },
+    "typeRoots": ["./node_modules/@types", "./types"], // Define type roots for type declarations
     "plugins": [
       {
-        "name": "next"
+        "name": "next" // Enable Next.js plugin
       }
-    ],
-    "paths": {
-      "@/*": ["./*"]
-    }
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"], // Files to be included in the compilation
+  "exclude": ["node_modules"] // Exclude node_modules from compilation
 }
